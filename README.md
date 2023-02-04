@@ -3,6 +3,27 @@ Test task for TEAM International
 
 gh-pages - [TEAMInternationalTask](https://yakovina.github.io/TEAMInternationalTask/) 
 
+
+#### Desirable improvements
+
+- create MVC pattern or re-render mechanism to make application faster
+- add component tests to avoid developers' mistakes in future
+- add js.doc or typescript to add documentation for functions and make code more readable
+- add possibility to read Quotes from HTML not only create them by javascript
+- add constants to const.js file if we wanna reuse them
+
+
+> #### How to install:
+>
+> **npm install** for installing packages
+>
+> **npm run start** for running application
+>
+>  **npm run build** for building application
+>
+>  **npm run deploy** for deploying on gh-pages
+> 
+
 > #### Task:
 > 
 > The goal of this test is to realize a tool mainly on Javascript.
@@ -19,24 +40,6 @@ gh-pages - [TEAMInternationalTask](https://yakovina.github.io/TEAMInternationalT
 > 
 > The use of CSS library is not restricted.Please send us a package with everything needed with working examples testable that cover all use cases.
 
-#### Desirable improvements
-
-- create MVC pattern or re-render mechanism to make application faster
-- add component test to avoid mistakes in future 
-- add js.doc or typescript to add documentation for functions and make code more readable
-- add possibility to read Quotes from HTML not only create them by javascript
-- add constants to const.js file if we wanna reuse them
-
-
-> #### How to install:
->
-> **npm install** for installing packages
->
-> **npm run start** for running application
-> 
->  **npm run build** for building application
-> 
->  **npm run deploy** for deploying on gh-pages
 
 
 **node version >14** 
