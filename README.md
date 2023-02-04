@@ -26,6 +26,7 @@ gh-pages - [TEAMInternationalTask](https://yakovina.github.io/TEAMInternationalT
 - add js.doc or typescript to add documentation for functions and make code more readable
 - add possibility to read Quotes from HTML not only create them by javascript
 - add constants to const.js file if we wanna reuse them
+- add loader to improve user experience
 
 
 > #### How to install:
