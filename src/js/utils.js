@@ -46,3 +46,13 @@ export const copyToClipBoard = (element) => {
     }, 1000);
   });
 };
+
+export const createError = (container, error) =>{
+  container.innerHTML = `
+  <div class="container mt-5">
+      <div class="alert alert-danger" role="alert">
+              ${error}
+       </div>
+  </div>
+`;
+};
