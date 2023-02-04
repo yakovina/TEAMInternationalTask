@@ -29,15 +29,20 @@ export const createElement = (template) => {
   return newElement.firstElementChild;
 };
 
-export const replace = (newElement, oldElement) => {
-  if (newElement === null || oldElement === null) {
-    throw new Error('Can\'t replace unexisting elements');
-  }
-  const parent = oldElement.parentElement;
+export const copyToClipBoard = (element) => {
+  const text = element.querySelector('.text').innerText;
+  const dataCopy = element.querySelector('.alert').getAttribute('data-copy');
+  const button = element.querySelector('.btn');
 
-  if (parent === null) {
-    throw new Error('Parent element doesn\'t exist');
-  }
+  navigator.clipboard.writeText(`${dataCopy? dataCopy: text}`).then(()=>{
+    const title = button.getAttribute('data-title');
 
-  parent.replaceChild(newElement, oldElement);
+    button.setAttribute('data-title', 'Copied');
+    button.querySelector('.bi').className = 'bi bi-check2';
+
+    setTimeout(()=>{
+      button.setAttribute('data-title', title);
+      button.querySelector('.bi').className = 'bi bi-clipboard';
+    }, 1000);
+  });
 };
