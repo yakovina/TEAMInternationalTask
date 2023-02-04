@@ -1,16 +1,18 @@
-import {createElement, renderElement, RenderPosition} from './utils';
+import {copyToClipBoard, createElement,
+  renderElement, RenderPosition} from './utils';
 
-const createToolView = ({text, isCopied}) =>{
+const createToolView = ({text, dataCopy}) =>{
+  const dataCopyHtml = dataCopy ? `data-copy="${dataCopy}"` : '';
   return `
-  <div class="container mt-3">
-  
-      <div class="alert alert-success" role="alert">
-     ${text}
+  <div class="container mt-5">
+      <div class="alert alert-light d-flex flex-sm-row mb-3 align-items-center 
+      justify-content-between"  role="alert" ${dataCopyHtml}>
+      <div class="text"> ${text} </div>
+      <button data-tooltip class="btn btn-light" data-title="Copy to clipboard">
+        <i class="bi bi-clipboard"></i>
+      </button>
     </div>
-    <button type="button" class="btn btn-success" >
-                Copy to clipboard
-    </button>
-</div>
+  </div>
   `;
 };
 
@@ -37,20 +39,11 @@ export default class Tool {
     return this.#element;
   };
 
-  #copyToClipBoard(e) {
-    const text = this.#tool.text;
-    navigator.clipboard.writeText(`${text} `).then(()=>{
-      this.#tool = {...this.#tool, isCopied: true};
-      e.target.innerText='Copied';
-    });
-  }
 
   init() {
-    renderElement(this.#container, this.element, RenderPosition.AFTERBEGIN);
+    renderElement(this.#container, this.element, RenderPosition.BEFOREEND);
     this.element.querySelector('.btn')
-        .addEventListener('click', (e)=>{
-          this.#copyToClipBoard(e);
-        });
+        .addEventListener('click', ()=> copyToClipBoard(this.element));
   }
 }
 
