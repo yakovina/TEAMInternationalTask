@@ -1,15 +1,10 @@
 .alert{
   .btn{
-    opacity:0;
-    pointer-events: none;
+    opacity:1;
     position: relative;
     i {
       pointer-events: none;
     }
-  }
-  &:hover .btn{
-    opacity: 1;
-    pointer-events: auto;
   }
 }
 
@@ -20,6 +15,7 @@
       position:absolute;
       font-size:0.8em;
       color:white;
+
     }
     &:before {
       border-radius:0.3em;
@@ -28,6 +24,7 @@
       bottom: calc(100% + 0.5em);
       padding:0.5em;
       white-space:nowrap;
+      right: -1.5em;
     }
     &:after {
       content:'';
@@ -40,12 +37,27 @@
     }
   }
 
-  @media (hover: none) and (pointer: coarse), (-moz-touch-enabled: 1){
+@media (pointer:coarse) {
     .alert{
       .btn{
         opacity: 1;
         pointer-events: auto;
+        position: relative;
       }
+    }
+  }
+}
+
+
+@media(hover: hover) and (pointer: fine) {
+  .alert{
+    .btn{
+      opacity:0;
+      pointer-events: none;
+    }
+    &:hover .btn{
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 }

@@ -56,3 +56,16 @@ export const createError = (container, error) =>{
   </div>
 `;
 };
+
+export const createLoader= (container) =>{
+  container.innerHTML = `
+      <div class="container d-flex justify-content-center">
+      <div class="spinner-border text-info" 
+          role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>`;
+};
+
+export const cleanContainer = (container) =>{
+  container.innerHTML = ``;
+};
