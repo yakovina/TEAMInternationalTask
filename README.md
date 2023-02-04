@@ -8,7 +8,7 @@ gh-pages - [TEAMInternationalTask](https://yakovina.github.io/TEAMInternationalT
 
 - create MVC pattern or re-render mechanism to make application faster
 - add component tests to avoid developers' mistakes in future
-- add js.doc or typescript to add documentation for functions and make code more readable
+- use js.doc or typescript to add documentation for functions and make code more readable
 - add possibility to read Quotes from HTML not only create them by javascript
 - add constants to const.js file if we wanna reuse them
 
