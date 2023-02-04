@@ -3,10 +3,14 @@ import {copyToClipBoard, createElement,
 
 const createToolView = ({text, dataCopy}) =>{
   const dataCopyHtml = dataCopy ? `data-copy="${dataCopy}"` : '';
+  const dataCopyBadge = dataCopy ?
+      `<span class="badge text-bg-light position-absolute bottom-0 end-0 "
+        >with data-copy</span>` : '';
   return `
   <div class="container mt-5">
       <div class="alert alert-light d-flex flex-sm-row mb-3 align-items-center 
-      justify-content-between"  role="alert" ${dataCopyHtml}>
+      p-4 justify-content-between"  role="alert" ${dataCopyHtml}>
+      ${dataCopyBadge}
       <div class="text"> ${text} </div>
       <button data-tooltip class="btn btn-light" data-title="Copy to clipboard">
         <i class="bi bi-clipboard"></i>
@@ -17,7 +21,7 @@ const createToolView = ({text, dataCopy}) =>{
 };
 
 
-export default class Tool {
+export default class CopyTextTool {
   #tool = null;
   #element = null;
   #container = null;
