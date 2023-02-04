@@ -11,6 +11,8 @@ gh-pages - [TEAMInternationalTask](https://yakovina.github.io/TEAMInternationalT
 - use js.doc or typescript to add documentation for functions and make code more readable
 - add possibility to read Quotes from HTML not only create them by javascript
 - add constants to const.js file if we wanna reuse them
+- add serviceworkers to work on app offline
+- add support for <IOS.10 devices
 
 
 > #### How to install:
